@@ -1,0 +1,81 @@
+﻿@model Almoxarifado.Application.ViewModels.PedidoViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8">
+    <title>Tela de Tipo de Medicamento</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="~/Content/css/sb-admin-2.min.css">
+</head>
+<body style="background-color: white;">
+    
+    
+    <center><h2 style="padding-top: 10px;">Cadastro de pedido</h2></center>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="
+            background-color: white;">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <label class="control-label col-md-10"><h5>Nome do medicamento </h5></label>
+                <div class="col-md-10">
+                    @Html.DropDownList("idMedicamento", new SelectList(ViewBag.MedicamentoAtivo, "idMedicamento", "nomeMedicamento"))
+                    @Html.ValidationMessageFor(model => model.idMedicamento, "", new { @class = "checkmark" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-10"><h5>Motivo do pedido </h5></label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.motivoPedido, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.motivoPedido, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-10"><h5>Quantidade do medicamento </h5></label>
+
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.quantidadeMedicamento, new { htmlAttributes = new { @class = "form-control form-control-user" } })
+
+                    @Html.ValidationMessageFor(model => model.quantidadeMedicamento, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-10"><h5>Local do medicamento </h5></label>
+                <div class="col-md-10">
+                    @Html.DropDownList("idLocalMedicamento", new SelectList(ViewBag.Local, "idLocalMedicamento", "nomeLocalMedicamento"))
+                    @Html.ValidationMessageFor(model => model.idLocalMedicamento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+                </div>
+            </div>
+        </div>
+        <div>
+            <button id="button1">
+                @Html.ActionLink("Voltar", "IndexMedico")
+            </button>
+        </div>
+    }
+</body>

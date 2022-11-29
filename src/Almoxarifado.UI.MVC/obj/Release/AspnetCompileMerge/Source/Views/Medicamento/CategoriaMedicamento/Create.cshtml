@@ -1,0 +1,63 @@
+﻿@model Almoxarifado.Application.ViewModels.CategoriaMedicamentoViewModel
+@{
+    ViewBag.Title = "Categoria do Medicamento";
+} <center><h2>Cadastro de Categoria de Medicamentoo</h2></center>
+<hr />
+
+<head>
+    <meta charset="utf-8">
+   
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css/style.css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class=" ">
+    <div class=" ">
+        <div class=" ">
+
+           
+            <form class="form-detail" asp-action="create" asp-controller="CategoriaMedicamento" method="post" id="myform">
+                @Html.AntiForgeryToken()
+                <div class="form-left">
+
+                    <label class="control-label col-md-10"><h5>Nome categoria do medicamento </h5></label>
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            @Html.EditorFor(model => model.nomeCategoriaMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o nome do medicamento" } })
+                            @Html.ValidationMessageFor(model => model.nomeCategoriaMedicamento, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <label class="control-label col-md-10"><h5>Status da categoria do medicamento</h5></label>
+                    <div class="col-md-3">
+                        <div class="checkbox">
+                            <label class="form-control">
+                                @Html.EditorFor(model => model.flativo)
+                                Ativo
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-2">
+                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-offset-2 col-md-2">
+                        <div class="btn btn-primary btn-user btn-blocks">
+                            @Html.ActionLink("Voltar", "Index", new { @class = "col-md-offset-2 col-md-2" })
+                        </div>
+                    </div>
+
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->

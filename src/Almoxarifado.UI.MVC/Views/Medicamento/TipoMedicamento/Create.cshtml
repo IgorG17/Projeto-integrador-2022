@@ -1,0 +1,65 @@
+﻿@model Almoxarifado.Application.ViewModels.TipoMedicamentoViewModel
+@{
+    ViewBag.Title = "Tipo do Medicamento";
+}
+
+
+<center><h2>Cadastro do Tipo de Medicamento</h2></center>
+<hr />
+<head>
+    <meta charset="utf-8">
+    <title>Tela de Tipo de Medicamento</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css/style.css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class=" ">
+    <div class=" ">
+        <div class=" ">
+            <form class="form-detail" asp-action="create" asp-controller="TipoMedicamento" method="post" id="myform">
+                @Html.AntiForgeryToken()
+                <div class="form-left">
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nome do medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomeTipoMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o nome do medicamento" } })
+                @Html.ValidationMessageFor(model => model.nomeTipoMedicamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Status do medicamento</h5></label>
+            <div class="col-md-3">
+                <div class="checkbox">
+                    <label class="form-control">
+                        @Html.EditorFor(model => model.flAtivo)
+                        Ativo
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-2">
+                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+}
+
+

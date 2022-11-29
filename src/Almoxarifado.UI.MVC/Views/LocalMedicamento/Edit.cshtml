@@ -1,0 +1,53 @@
+﻿@model Almoxarifado.Application.ViewModels.LocalMedicamentoViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<center><h2>Alteração do cadastro de estoque </h2></center>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.idLocalMedicamento)
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nome do estoque </h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomeLocalMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar o nome do estoque" } })
+                @Html.ValidationMessageFor(model => model.nomeLocalMedicamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <label class="control-label col-md-10"><h5>Status de estoque</h5></label>
+    <div class="col-md-3">
+        <div class="checkbox">
+            <label class="form-control">
+                @Html.EditorFor(model => model.flAtivo)
+                Ativo
+            </label>
+        </div>
+    </div>
+    <hr />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+        </div>
+    </div>
+
+    <div class="col-md-offset-2 col-md-2">
+        <div class="btn btn-primary btn-user btn-blocks">
+            @Html.ActionLink("Voltar", "Index", new { @class = "col-md-offset-2 col-md-2" })
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+}

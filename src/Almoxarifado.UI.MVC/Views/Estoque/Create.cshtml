@@ -1,0 +1,99 @@
+﻿@model Almoxarifado.Application.ViewModels.EntradaEstoqueViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<center><h2>Entrada de estoque</h2></center>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Nota de entrada de estoque </h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.notaEntradaEstoque, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o numero da nota" } })
+            @Html.ValidationMessageFor(model => model.notaEntradaEstoque, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Nome do medicamento</h5></label>
+        <div class="col-md-3">
+            @Html.DropDownList("idMedicamento", new SelectList(ViewBag.MedicamentoAtivo, "idMedicamento", "nomeMedicamento"))
+            @Html.ValidationMessageFor(model => model.idMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Lote de estoque</h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.loteMedicamentoEstoque, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o numero do lote" } })
+            @Html.ValidationMessageFor(model => model.loteMedicamentoEstoque, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Quantidade do medicamento </h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.quantidadeMedicamentoEstoque, new { htmlAttributes = new { @class = "form-control", placeholder = "Quantidade de medicamento em estoque" } })
+            @Html.ValidationMessageFor(model => model.quantidadeMedicamentoEstoque, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Preço do Pedido </h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.precoPedido, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o custo deste medicamento" } })
+            @Html.ValidationMessageFor(model => model.precoPedido, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Data de vencimento </h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.validadeMedicamento, new { htmlAttributes = new { @class = "form-control", @Type = "date" } })
+            @Html.ValidationMessageFor(model => model.validadeMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Local do medicamento</h5></label>
+        <div class="col-md-3">
+            @Html.DropDownList("idLocalMedicamento", new SelectList(ViewBag.Local, "idLocalMedicamento", "nomeLocalMedicamento"))
+            @Html.ValidationMessageFor(model => model.idLocalMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Tipo de entrada de estoque</h5></label>
+        <div class="col-md-3">
+            @Html.DropDownList("idTipoEntradaEstoque", new SelectList(ViewBag.TipoEntradaEstoque, "idTipoEntradaEstoque", "nomeTipoEntradaEstoque"))
+            @Html.ValidationMessageFor(model => model.idTipoEntradaEstoque, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+        </div>
+    </div>
+</div>
+<div class"col-md-offset-2 col-md-2">
+    <div class="btn btn-primary btn-user btn-blocks">
+        @Html.ActionLink("Voltar", "Index", new { @class = "col-md-offset-2 col-md-2" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+}
+
+

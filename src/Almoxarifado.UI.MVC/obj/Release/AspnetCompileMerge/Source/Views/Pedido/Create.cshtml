@@ -1,0 +1,62 @@
+﻿@model Almoxarifado.Application.ViewModels.PedidoViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<center><h2>Cadastro de pedido</h2></center>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken() 
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Nome do medicamento </h5></label>
+        <div class="box">
+            @Html.DropDownList("idMedicamento", new SelectList(ViewBag.MedicamentoAtivo, "idMedicamento", "nomeMedicamento"))
+            @Html.ValidationMessageFor(model => model.idMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Motivo do pedido </h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.motivoPedido, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o motivo do pedido" } })
+            @Html.ValidationMessageFor(model => model.motivoPedido, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Quantidade do medicamento </h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.quantidadeMedicamento, new { htmlAttributes = new { @class = "form-control form-control-user", placeholder = "Digite a quantidade de medicamento" } })
+            @Html.ValidationMessageFor(model => model.quantidadeMedicamento, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <div class="form-group">
+
+        <label class="control-label col-md-10"><h5>Estoque </h5></label>
+        <div class="box">
+            @Html.DropDownList("idLocalMedicamento", new SelectList(ViewBag.Local, "idLocalMedicamento", "nomeLocalMedicamento"))
+            @Html.ValidationMessageFor(model => model.idLocalMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <hr />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+        </div>
+    </div>
+</div>
+
+<div class="col-md-offset-2 col-md-2">
+    <div class="btn btn-primary btn-user btn-blocks">
+        @Html.ActionLink("Voltar", "Index", new { @class = "col-md-offset-2 col-md-2" })
+    </div>
+</div>
+}

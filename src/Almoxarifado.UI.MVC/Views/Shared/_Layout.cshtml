@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="~/Content/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body id="page-top">
+    <!-- CONTEUDO -->
+    <div id="wrapper">
+
+        <!--SIDEBAR-->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index", "Home")">
+                <div class="sidebar-brand-icon">
+
+                    <img class="img-fluid" src="~/Content/img/logoBranco.svg" />
+                </div>
+            </a>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Home")">
+                    <i class='bx bxs-dashboard'></i>
+                    <span>Dashboard / Estoque</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Principal
+            </div>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Pedido")">
+                    <i class='bx bx-list-ul'></i>
+                    <span>Pedidos</span>
+                </a>
+            </li>
+
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Cadastros
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "TipoMedicamento")">
+                    <i class='bx bxs-capsule'></i>
+                    <span>Tipo do Medicamento</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "CategoriaMedicamento")">
+                    <i class='bx bxs-category-alt'></i>
+                    <span>Categoria do Medicamento</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Medicamento")">
+                    <i class='bx bx-plus-medical'></i>
+                    <span>Medicamento</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Listar", "Usuario")">
+                    <i class='bx bxs-user-detail'></i>
+                    <span>Usuario</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Local")">
+                    <i class='bx bxs-box'></i>
+                    <span>Estoques</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Usuario
+            </div>
+
+
+            @if (Request.IsAuthenticated)
+            {
+                //-------------------------------- @*<b>@Html.Encode(User.Identity.Name)</b>*@ // NÃO APAGAR ESSA LINHA ----------------------------------------------------------------
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Logout", "Usuario")">
+                    <i class='bx bxs-log-out'></i>
+                    <span>Sair</span>
+                </a>
+            </li>
+
+
+            }
+
+        </ul>
+
+
+        <!-- PAGINA -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+
+                <!-- TOPBAR -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Nav Item - User Information -->
+                    <div class="">
+                        <span class="h4 mb-0 text-gray-900">Seja bem-vindo, @Html.Encode(User.Identity.Name)!</span>
+
+
+                    </div>
+
+
+                </nav>
+
+
+                <!-- CONTEUDO-->
+                <div>
+                    @RenderBody()
+                </div>
+
+            </div>
+
+
+            <!-- CABEÇALHO -->
+            <div>
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Nome da Clinica 2022</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/Content/js/sb-admin-2.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿@model Almoxarifado.Application.ViewModels.MedicamentoViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<center><h2>Alteração de cadastro medicamento</h2></center>
+<hr />
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.idMedicamento)
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nome popular do medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomeMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar o nome popular do medicamento" } })
+                @Html.ValidationMessageFor(model => model.nomeMedicamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nome quimico do medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomeQuimicoMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar o nome quimico do medicamento" } })
+                @Html.ValidationMessageFor(model => model.nomeQuimicoMedicamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Forma farmaceutica do medicamento</h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.formaFarmaceuticaMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar a forma farmaceutica do medicamento" } })
+            @Html.ValidationMessageFor(model => model.formaFarmaceuticaMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Bula do medicamento</h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.bulaMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar o Numero da bula do medicamento" } })
+            @Html.ValidationMessageFor(model => model.bulaMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <label class="control-label col-md-10"><h5>Status do medicamento</h5></label>
+    <div class="col-md-3">
+        <div class="checkbox">
+            <label class="form-control">
+                @Html.EditorFor(model => model.flativo)
+                Ativo
+            </label>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Nome do tipo de medicamento</h5></label>
+        <div class="box">
+            @Html.DropDownList("idCategoriaMedicamento", new SelectList(ViewBag.CategoriaMedicamento, "idCategoriaMedicamento", "nomeCategoriaMedicamento"))
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Nome da categoria do medicamento</h5></label>
+        <div class="box">
+            @Html.DropDownList("idTipoMedicamento", new SelectList(ViewBag.TipoMedicamento, "idTipoMedicamento", "nomeTipoMedicamento"))
+        </div>
+    </div>
+
+    <hr />
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Numero do registro Min. Saúde</h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.nrMinisterioSaudeMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar o Numero do registro Min. Saúde" } })
+            @Html.ValidationMessageFor(model => model.nrMinisterioSaudeMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label col-md-10"><h5>Código do medicamento</h5></label>
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.codigoDbcMedicamento, new { htmlAttributes = new { @class = "form-control", placeholder = "Alterar o código do medicamento" } })
+            @Html.ValidationMessageFor(model => model.codigoDbcMedicamento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+        </div>
+    </div>
+    <div class="col-md-offset-2 col-md-2">
+        <div class="btn btn-primary btn-user btn-blocks">
+            @Html.ActionLink("Voltar", "Index", new { @class = "col-md-offset-2 col-md-2" })
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}
+

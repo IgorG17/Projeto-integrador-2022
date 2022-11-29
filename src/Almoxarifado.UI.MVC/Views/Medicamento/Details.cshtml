@@ -1,0 +1,50 @@
+﻿@model Almoxarifado.Application.ViewModels.MedicamentoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MedicamentoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeMedicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flativo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeTipoMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeTipoMedicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeCategoriaMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeCategoriaMedicamento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idMedicamento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

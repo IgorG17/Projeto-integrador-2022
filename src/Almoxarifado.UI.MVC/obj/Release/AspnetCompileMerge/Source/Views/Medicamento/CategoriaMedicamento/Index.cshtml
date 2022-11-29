@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Almoxarifado.Application.ViewModels.CategoriaMedicamentoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Tela de Tipo de Medicamento</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css/style.css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class=" ">
+    <div class=" ">
+        <div class=" ">
+            <div class="form-left">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Categorias de Medicamento</h1>
+                    <p class="mb-4">
+                       </a>
+                    </p>
+
+                    <p>
+                        @Html.ActionLink("Cadastrar", "Create")
+                    </p>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Dados da Tabela</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Categoria do Medicamento</th>
+                                            <th>Status</th>
+                                            <th>Alterações</th>
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach (var item in Model){
+                                        <tr>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.nomeCategoriaMedicamento)</td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.flativo) </td>
+                                            <td style="padding-right: 60px">
+                                                @Html.ActionLink("Editar", "Edit", new { id=item.idCategoriaMedicamento })
+                                            </td>
+                                        </tr>
+
+                                            }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>

@@ -1,0 +1,14 @@
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\Almoxarifado.Domain.dll.config
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\Almoxarifado.Domain.dll
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\Almoxarifado.Domain.pdb
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\AutoMapper.dll
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\EntityFramework.dll
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\AutoMapper.xml
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\EntityFramework.xml
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\obj\Release\Almoxarifado.Domain.csproj.AssemblyReference.cache
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\obj\Release\Almoxarifado.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\obj\Release\Almoxarifado.Domain.csproj.CopyComplete
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\obj\Release\Almoxarifado.Domain.dll
+C:\Users\kakob\Desktop\Projeto\Administrador de Distribuição e Racionamento de Fármacos\src\Almoxarifado.Domain\obj\Release\Almoxarifado.Domain.pdb

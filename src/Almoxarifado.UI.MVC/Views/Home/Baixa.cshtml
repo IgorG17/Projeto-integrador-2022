@@ -1,0 +1,108 @@
+﻿@model Almoxarifado.Application.ViewModels.BaixaEstoqueViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    var medicamento = ViewBag.Medicamento;
+}
+
+<center><h2>Baixa de estoque</h2></center>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.idEntradaEstoque)
+        @Html.HiddenFor(model => model.dataEntradaEstoque)
+
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nota de entrada</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.notaEntradaEstoque, new { htmlAttributes = new { @class = "form-control", disabled = "", placeholder = "Digite o numero da nota de entrada" } })
+                @Html.ValidationMessageFor(model => model.notaEntradaEstoque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nome do medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomeMedicamentoBaixa, new{htmlAttributes = new{@class = "form-control",disabled = ""}})
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Lote Medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.loteMedicamentoEstoque, new { htmlAttributes = new { @class = "form-control", disabled = "", placeholder = "Digite o lote do medicamento em estoque" } })
+                @Html.ValidationMessageFor(model => model.loteMedicamentoEstoque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Quantidade em estoque</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.quantidadeMedicamentoEstoque, new { htmlAttributes = new { @class = "form-control", disabled = "", placeholder = "Digite a quantidade de medicamento em estoque" } })
+                @Html.ValidationMessageFor(model => model.quantidadeMedicamentoEstoque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Validade do medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.validadeMedicamento, new { htmlAttributes = new { @class = "form-control", @Type = "date", disabled = "", placeholder = "Digite a data de validade do medicamento" } })
+                @Html.ValidationMessageFor(model => model.validadeMedicamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Local Medicamento</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomeLocalBaixa, new { htmlAttributes = new { @class = "form-control", disabled = "", } })
+                @Html.ValidationMessageFor(model => model.idLocalMedicamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Quantidade para baixa</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.quantidadeBaixa, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite a quantidade de retirada" } })
+                @Html.ValidationMessageFor(model => model.quantidadeBaixa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Nome paciente</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.nomePacienteBaixaEstoque, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o nome paciente" } })
+                @Html.ValidationMessageFor(model => model.nomePacienteBaixaEstoque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-10"><h5>Documento paciente</h5></label>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.documentoPacienteBaixaEstoque, new { htmlAttributes = new { @class = "form-control", placeholder = "Digite o documento paciente" } })
+                @Html.ValidationMessageFor(model => model.documentoPacienteBaixaEstoque, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-2">
+                <input type="submit" class="btn btn-primary btn-user btn-block" value="Cadastrar" />
+            </div>
+        </div>
+    </div>
+    <div class"col-md-offset-2 col-md-2">
+        <div class="btn btn-primary btn-user btn-blocks">
+            @Html.ActionLink("Voltar", "Index", new { @class = "col-md-offset-2 col-md-2" })
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+}

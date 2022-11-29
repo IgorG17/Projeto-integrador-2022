@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Almoxarifado.Application.ViewModels.PedidoViewModel>
+
+@{
+    ViewBag.Title = "View";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Tela de Tipo de Medicamento</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css/style.css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class=" ">
+    <div class=" ">
+        <div class=" ">
+            <div class="form-left">
+
+                <div class="container-fluid">
+
+                    <!-- Page Headingg -->
+                    <h1 class="h3 mb-2 text-gray-800">Pedidos</h1>
+                    <p class="mb-4">
+                        DataTables is a third party plugin that is used to generate the demo table below.
+                        For more information about DataTables, please visit the official DataTables documentation</a>.
+                    </p>
+
+                    <p>
+                        @Html.ActionLink("Cadastrar", "Create")
+                    </p>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Dados da Tabela</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Numero</th>
+                                            <th>Medicamento</th>
+                                            <th>Quantidade</th>
+                                            <th>Motivo</th>
+                                            <th>Status</th>
+                                            <th>Data do Pedido</th>
+                                            <th>Alteração</th>
+
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.numeroPedido)</td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.medicamentoPedido.nomeMedicamento) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.quantidadeMedicamento) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.motivoPedido) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.statusPedido) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.dataEntradaPedido) </td>
+                                            <td style="padding-right: 60px">
+                                                @if (item.statusPedido == "Aguardando resposta")
+                                                    {
+                                                @Html.ActionLink("Responder", "Resposta", new { id = item.idPedido })
+                                                    }
+                                                @if (item.statusPedido == "Aceito")
+                                                    {
+                                                @Html.ActionLink("Dar Entrada", "Create", "Estoque", new { id = item.idPedido }, null)
+                                                    }
+
+                                            </td>
+                                        </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

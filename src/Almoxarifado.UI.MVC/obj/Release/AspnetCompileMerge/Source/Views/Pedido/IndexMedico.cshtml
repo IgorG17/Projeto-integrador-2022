@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Almoxarifado.Application.ViewModels.PedidoViewModel>
+
+@{
+    ViewBag.Title = "View";
+    Layout =null;
+    
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Tela de Tipo de Medicamento</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="~/Content/css/sb-admin-2.min.css">
+</head>
+
+
+<!-- TOPBAR -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+
+    <!-- Nav Item - User Information -->
+    <div class="">
+        <span>
+            <span class="h4 mb-0 text-gray-900">Seja bem-vindo, @Html.Encode(User.Identity.Name)!</span>
+        </span>
+    </div>
+
+    <div class="topbar-divider d-none d-sm-block"></div>
+
+    <!-- Nav Item - User Information -->
+    <div>
+        <div class="nav-item">
+            <a class="nav-link" href="@Url.Action("Logout", "Usuario")">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Sair</span>
+            </a>
+        </div>
+    </div>
+    
+
+
+</nav>
+<body class="">
+    <div class="">
+        <div class="">
+            <div class="form-left">
+
+                <div class="container-fluid">
+
+                    <!-- Page Headingg -->
+                    <h1 class="h3 mb-2 text-gray-800">Pedidos</h1>
+                    
+
+                    <p>
+                        @Html.ActionLink("Cadastrar", "CreateMedico")
+                    </p>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Dados da Tabela</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Numero</th>
+                                            <th>Medicamento</th>
+                                            <th>Quantidade</th>
+                                            <th>Motivo</th>
+                                            <th>Status</th>
+                                            <th>Data do Pedido</th>
+
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.numeroPedido)</td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.medicamentoPedido.nomeMedicamento) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.quantidadeMedicamento) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.motivoPedido) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.statusPedido) </td>
+                                            <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.dataEntradaPedido) </td>
+
+                                        </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

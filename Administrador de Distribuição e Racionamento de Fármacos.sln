@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{86627E89-7351-470B-85D3-BD6228BE83C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{56ACB940-4674-4EFB-BA41-8123D6B50327}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{5BC15CB1-6088-4C3C-AEEC-571AED338FC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{648D856C-C79C-48DB-BF61-B60991E09899}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{8822B48E-F24B-46E6-A023-3D73CA9F2145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almoxarifado.UI.MVC", "src\Almoxarifado.UI.MVC\Almoxarifado.UI.MVC.csproj", "{C8A60409-985E-457E-8048-2D5D6D00A0FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almoxarifado.Domain", "src\Almoxarifado.Domain\Almoxarifado.Domain.csproj", "{C5C973D4-4774-47AF-B834-C946436E9DD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{99E59413-1E42-4969-BD89-F11B5D6A2731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almoxarifado.Infra.Data", "src\Almoxarifado.Infra.Data\Almoxarifado.Infra.Data.csproj", "{BFC7E931-39A5-4FBF-A381-5FCF4B5418AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Almoxarifado.Application", "src\Almoxarifado.Application\Almoxarifado.Application.csproj", "{B6F2A26D-DB22-4573-91E8-5EFBBA0D7A6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8A60409-985E-457E-8048-2D5D6D00A0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A60409-985E-457E-8048-2D5D6D00A0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A60409-985E-457E-8048-2D5D6D00A0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A60409-985E-457E-8048-2D5D6D00A0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C973D4-4774-47AF-B834-C946436E9DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C973D4-4774-47AF-B834-C946436E9DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C973D4-4774-47AF-B834-C946436E9DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C973D4-4774-47AF-B834-C946436E9DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC7E931-39A5-4FBF-A381-5FCF4B5418AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC7E931-39A5-4FBF-A381-5FCF4B5418AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC7E931-39A5-4FBF-A381-5FCF4B5418AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC7E931-39A5-4FBF-A381-5FCF4B5418AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F2A26D-DB22-4573-91E8-5EFBBA0D7A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F2A26D-DB22-4573-91E8-5EFBBA0D7A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F2A26D-DB22-4573-91E8-5EFBBA0D7A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F2A26D-DB22-4573-91E8-5EFBBA0D7A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8A60409-985E-457E-8048-2D5D6D00A0FE} = {86627E89-7351-470B-85D3-BD6228BE83C3}
+		{C5C973D4-4774-47AF-B834-C946436E9DD0} = {648D856C-C79C-48DB-BF61-B60991E09899}
+		{99E59413-1E42-4969-BD89-F11B5D6A2731} = {8822B48E-F24B-46E6-A023-3D73CA9F2145}
+		{BFC7E931-39A5-4FBF-A381-5FCF4B5418AF} = {99E59413-1E42-4969-BD89-F11B5D6A2731}
+		{B6F2A26D-DB22-4573-91E8-5EFBBA0D7A6F} = {5BC15CB1-6088-4C3C-AEEC-571AED338FC4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F024BA2-4F05-4ED4-8FFE-61DC0EFBB62A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/unisalengenhariacomputacao
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\Almoxarifado.UI.MVC\\Almoxarifado.UI.MVC.csproj
+		SccProjectTopLevelParentUniqueName1 = Administrador\u0020de\u0020Distribuição\u0020e\u0020Racionamento\u0020de\u0020Fármacos.sln
+		SccProjectName1 = src/Almoxarifado.UI.MVC
+		SccLocalPath1 = src\\Almoxarifado.UI.MVC
+		SccProjectUniqueName2 = src\\Almoxarifado.Domain\\Almoxarifado.Domain.csproj
+		SccProjectTopLevelParentUniqueName2 = Administrador\u0020de\u0020Distribuição\u0020e\u0020Racionamento\u0020de\u0020Fármacos.sln
+		SccProjectName2 = src/Almoxarifado.Domain
+		SccLocalPath2 = src\\Almoxarifado.Domain
+		SccProjectUniqueName3 = src\\Almoxarifado.Infra.Data\\Almoxarifado.Infra.Data.csproj
+		SccProjectTopLevelParentUniqueName3 = Administrador\u0020de\u0020Distribuição\u0020e\u0020Racionamento\u0020de\u0020Fármacos.sln
+		SccProjectName3 = src/Almoxarifado.Infra.Data
+		SccLocalPath3 = src\\Almoxarifado.Infra.Data
+		SccProjectUniqueName4 = src\\Almoxarifado.Application\\Almoxarifado.Application.csproj
+		SccProjectTopLevelParentUniqueName4 = Administrador\u0020de\u0020Distribuição\u0020e\u0020Racionamento\u0020de\u0020Fármacos.sln
+		SccProjectName4 = src/Almoxarifado.Application
+		SccLocalPath4 = src\\Almoxarifado.Application
+	EndGlobalSection
+EndGlobal

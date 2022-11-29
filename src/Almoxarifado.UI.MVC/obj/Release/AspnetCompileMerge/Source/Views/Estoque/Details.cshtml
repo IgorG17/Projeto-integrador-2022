@@ -1,0 +1,82 @@
+﻿@model Almoxarifado.Application.ViewModels.EntradaEstoqueViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EntradaEstoqueViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.notaEntradaEstoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notaEntradaEstoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEntradaEstoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEntradaEstoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idMedicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.loteMedicamentoEstoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loteMedicamentoEstoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quantidadeMedicamentoEstoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantidadeMedicamentoEstoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.validadeMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.validadeMedicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idLocalMedicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idLocalMedicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUsuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idEntradaEstoque }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

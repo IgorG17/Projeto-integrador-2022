@@ -1,0 +1,103 @@
+﻿@model List<Almoxarifado.Application.ViewModels.EntradaEstoqueViewModel>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+<head>
+    <meta charset="utf-8">
+  
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    @Styles.Render("~/Content/css/style.css")
+
+
+    <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+    <link rel="stylesheet" type="text/css" href="Almoxarifado.UI.MVC\Content\fonts\material-design-iconic-font\css\material-design-iconic-font.min.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class=" ">
+    <div class=" ">
+        <div class=" ">
+            <div class="form-left">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Estoque</h1>
+                    <p class="mb-4">
+                        </a>
+                    </p>
+
+                    <p>
+                        @Html.ActionLink("Cadastrar", "Create")
+                    </p>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Dados da Tabela</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Nota</th>
+                                            <th>Data de Entrada</th>
+                                            <th>ID Medicamento</th>
+                                            <th>Lote</th>
+                                            <th>Quantidade</th>
+                                            <th>Validade</th>
+                                            <th>ID Localidade</th>
+                                            <th>Alteração</th>
+
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            if (item.quantidadeMedicamentoEstoque > 0)
+                                            {
+                                                <tr>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.notaEntradaEstoque)</td>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.dataEntradaEstoque) </td>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.medicamentoEstoque.nomeMedicamento) </td>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.loteMedicamentoEstoque) </td>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.quantidadeMedicamentoEstoque) </td>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.validadeMedicamento) </td>
+                                                    <td style="padding-right: 60px"> @Html.DisplayFor(modelItem => item.localMedicamento.nomeLocalMedicamento) </td>
+
+                                                    <td style="padding-right: 60px">
+                                                        @Html.ActionLink("Baixa", "Baixa", new { id = item.idEntradaEstoque }) @*|
+                                                            @Html.ActionLink("Detalhes", "Details", new { id=item.idEntradaEstoque }) |
+                                                            @Html.ActionLink("Deletar", "Delete", new { id=item.idEntradaEstoque })*@
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
